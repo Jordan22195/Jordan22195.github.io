@@ -7,7 +7,8 @@ function calcStrideLength() {
 
   let distance = document.getElementById('distance').value;
   let time = document.getElementById('time').value;
-  let numberOfSteps = time * 180;
+  let cadence = document.getElementById('cadence').value;
+  let numberOfSteps = time * cadence;
   distance = distance * 1000; //convert to meters
   let strideLength = distance / numberOfSteps;
 
@@ -25,6 +26,8 @@ function calcStrideLength() {
 <form>
   <label for="distance" >Distance(km):</label><br>
   <input type="text" value="5"id="distance" name="fname"><br>
+  <label for="cadence" >Cadence(steps per minute):</label><br>
+  <input type="text" value="180"id="cadence" name="fname"><br>
   <label for="time">Goal Time:</label><br>
   <input type="text" value="20" id="time" name="lname">
 </form> 
