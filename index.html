@@ -1,1 +1,36 @@
- 
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function calcStrideLength() {
+
+
+  let distance = document.getElementById('distance').value;
+  let time = document.getElementById('time').value;
+  let numberOfSteps = time * 180;
+  distance = distance * 1000; //convert to meters
+  let strideLength = distance / numberOfSteps;
+
+  let strideLengthFt = strideLength * 3.28084;
+  
+
+
+  document.getElementById("output").innerHTML = strideLength.toFixed(2) + 'm <br> ' + strideLengthFt.toFixed(2) + 'ft';
+}
+</script>
+</head>
+
+<body>
+<h2>Stride Length Calculator</h2>
+<form>
+  <label for="distance" >Distance(km):</label><br>
+  <input type="text" value="5"id="distance" name="fname"><br>
+  <label for="time">Goal Time:</label><br>
+  <input type="text" value="20" id="time" name="lname">
+</form> 
+
+<p id="output"></p>
+<button type="button" onclick="calcStrideLength()">Go</button>
+
+</body>
+</html>
