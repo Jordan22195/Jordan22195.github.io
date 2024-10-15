@@ -22,8 +22,8 @@ function calcStrideLength() {
   function calcScaledCost() {
 
 
-  let origWorth = document.getElementById('muskWorth').value;
-  let scaledWorth = document.getElementById('yourWorth').value;
+  let origWorth = document.getElementById('muskWorth').value * 1000000000;
+  let scaledWorth = document.getElementById('yourWorth').value * 1000;
   let itemCost = document.getElementById('itemCost').value;
   let percentOrigWorth = itemCost / origWorth;
   let scaledCost = percentOrigWorth * scaledWorth;
@@ -31,7 +31,7 @@ function calcStrideLength() {
   
 
 
-  document.getElementById("costOutput").innerHTML = "Item cost " + percentOrigWorth.toFixed(2) + "of Musk net worth, which equates to <br>" + scaledCost.toFixed(2) + "in real person money";
+  document.getElementById("costOutput").innerHTML = "Item cost " + percentOrigWorth.toFixed(2) + "% of Musk net worth, which equates to <br>" + "$" + scaledCost.toFixed(2) + " in real person money";
 }
 </script>
 </head>
