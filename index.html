@@ -24,14 +24,14 @@ function calcStrideLength() {
 
   let origWorth = document.getElementById('muskWorth').value * 1000000000;
   let scaledWorth = document.getElementById('yourWorth').value * 1000;
-  let itemCost = document.getElementById('itemCost').value;
+  let itemCost = document.getElementById('itemCost').value * 1000000;
   let percentOrigWorth = itemCost / origWorth;
   let scaledCost = percentOrigWorth * scaledWorth;
 
   
 
 
-  document.getElementById("costOutput").innerHTML = "Item cost " + percentOrigWorth.toFixed(2) + "% of Musk net worth, which equates to <br>" + "$" + scaledCost.toFixed(2) + " in real person money";
+  document.getElementById("costOutput").innerHTML = "Item cost " + percentOrigWorth + "% of Musk net worth, which equates to <br>" + "$" + scaledCost.toFixed(2) + " in real person money";
 }
 </script>
 </head>
@@ -56,7 +56,7 @@ function calcStrideLength() {
   <input type="text" value="230"id="muskWorth" name="fname"><br>
   <label for="yourWorth" >Your Net Worth ($Thousand):</label><br>
   <input type="text" value="100"id="yourWorth" name="fname"><br>
-  <label for="itemCost">Item Cost $</label><br>
+  <label for="itemCost">Item Cost ($M)</label><br>
   <input type="text" value="20" id="itemCost" name="lname">
 </form> 
 
