@@ -18,6 +18,21 @@ function calcStrideLength() {
 
   document.getElementById("output").innerHTML = strideLength.toFixed(2) + 'm <br> ' + strideLengthFt.toFixed(2) + 'ft';
 }
+
+  function calcScaledCost() {
+
+
+  let origWorth = document.getElementById('muskWorth').value;
+  let scaledWorth = document.getElementById('yourWorth').value;
+  let itemCost = document.getElementById('itemCost').value;
+  let percentOrigWorth = itemCost / origWorth;
+  let scaledCost = percentOrigWorth * scaledWorth;
+
+  
+
+
+  document.getElementById("costOutput").innerHTML = "Item cost " + percentOrigWorth.toFixed(2) + "of Musk net worth, which equates to <br>" + scaledCost.toFixed(2) + "in real person money";
+}
 </script>
 </head>
 
@@ -34,6 +49,19 @@ function calcStrideLength() {
 
 <p id="output"></p>
 <button type="button" onclick="calcStrideLength()">Go</button>
+
+<h2>Elon Must Calculator</h2>
+<form>
+  <label for="muskWorth" >Musk Net Worth ($Billion):</label><br>
+  <input type="text" value="230"id="muskWorth" name="fname"><br>
+  <label for="yourWorth" >Your Net Worth ($Thousand):</label><br>
+  <input type="text" value="100"id="yourWorth" name="fname"><br>
+  <label for="itemCost">Item Cost $</label><br>
+  <input type="text" value="20" id="itemCost" name="lname">
+</form> 
+
+<p id="costOutput"></p>
+<button type="button" onclick="calcScaledCost()">Go</button>
 
 </body>
 </html>
